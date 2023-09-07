@@ -29,6 +29,7 @@ button,
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  outline: none;
 }
 
 button.recommend,
@@ -154,4 +155,9 @@ html[dir="rtl"] button[data-icon].next::before,
 html[dir="rtl"] .button[data-icon].next::before {
   left: 1rem;
   right: unset;
+}
+
+.lists ul li button,
+.lists ul li .button {
+  border: solid 0.1rem rgba(255,255,255,0.1);
 }
