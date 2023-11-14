@@ -8,7 +8,7 @@ html, body {
 }
 
 :root {
-  --statusbar-height: 4rem;
+  --statusbar-height: env(safe-area-inset-top, 0rem);
   --software-buttons-height: 0rem;
   --safezone-width: 75rem;
 }
@@ -37,9 +37,6 @@ html, body {
   transition: all 1s cubic-bezier(0.2, 0.9, 0.1, 1), opacity 0.3s cubic-bezier(0.2, 0.9, 0.1, 1);
 }
 
-[role="panel"].previous {
-  /* filter: brightness(50%); */
-}
 html[dir="ltr"] [role="panel"].previous {
   transform: translateX(-3rem);
 }
@@ -47,9 +44,6 @@ html[dir="rtl"] [role="panel"].previous {
   transform: translateX(3rem);
 }
 
-[role="panel"].next {
-  /* filter: brightness(100%); */
-}
 html[dir="ltr"] [role="panel"].next {
   transform: translateX(3rem);
 }
@@ -61,9 +55,13 @@ html[dir="ltr"] [role="panel"].visible,
 html[dir="rtl"] [role="panel"].visible {
   visibility: visible;
   transform: translateX(0);
-  filter: brightness(100%);
   opacity: 1;
   transition: all 1s cubic-bezier(0.2, 0.9, 0.1, 1), opacity 0.7s cubic-bezier(0.2, 0.9, 0.1, 1) 0.3s;
+}
+
+html[dir="ltr"] [role="panel"].will-be-visible,
+html[dir="rtl"] [role="panel"].will-be-visible {
+  transition: all 0.3s ease;
 }
 
 [role="panel"] > .content {
@@ -71,13 +69,17 @@ html[dir="rtl"] [role="panel"].visible {
   flex-grow: 1;
   width: 100%;
   height: 100%;
-  margin-top: calc((-9rem - var(--statusbar-height)) * var(--progress, 0));
   padding-bottom: var(--software-buttons-height);
   overflow-y: auto;
   scrollbar-width: none;
 }
 
-[role="panel"] > .content > *:not(.scroll-content),
+[role="panel"] > .content > .scroll-content {
+  width: 100%;
+  min-height: 100%;
+}
+
+[role="panel"] > .content > *:not(.scroll-content, .scrollbar-track),
 [role="panel"] > .content > .scroll-content > * {
   visibility: hidden;
   transform: translateY(3rem);
@@ -85,8 +87,10 @@ html[dir="rtl"] [role="panel"].visible {
   transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.5s, opacity 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.5s, visibility 0.5s ease 0.5s;
 }
 
-[role="panel"].visible > .content > *:not(.scroll-content),
-[role="panel"].visible > .content > .scroll-content > * {
+[role="panel"].visible > .content > *:not(.scroll-content, .scrollbar-track),
+[role="panel"].will-be-visible > .content > *:not(.scroll-content, .scrollbar-track),
+[role="panel"].visible > .content > .scroll-content > *,
+[role="panel"].will-be-visible > .content > .scroll-content > * {
   visibility: visible;
   transform: translateY(0);
   opacity: 1;
@@ -153,7 +157,7 @@ html[dir="rtl"] [role="panel"].visible {
 }
 
 [role="panel"] > .content .scrollbar-track {
-  margin: 0.25rem;
+  margin: 0.5rem;
   overflow: hidden;
   border-radius: 1rem;
   background-color: transparent;
@@ -161,13 +165,13 @@ html[dir="rtl"] [role="panel"].visible {
 
 [role="panel"] > .content .scrollbar-track-x {
   bottom: var(--software-buttons-height);
-  height: 0.75rem;
+  height: 0.5rem;
 }
 
 [role="panel"] > .content .scrollbar-track-y {
   top: calc(0.5rem + (5rem * var(--progress)));
   right: 0;
-  width: 0.75rem;
+  width: 0.5rem;
   height: calc(100% - 1rem - var(--software-buttons-height) - (5rem * var(--progress)));
 }
 html[dir="rtl"] [role="panel"] > .content .scrollbar-track-y {
@@ -182,8 +186,8 @@ html[dir="rtl"] [role="panel"] > .content .scrollbar-track-y {
 
 [role="panel"] > .content .scrollbar-thumb {
   box-sizing: border-box;
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 1rem;
   background-clip: content-box;
   background-color: var(--text-color-faded);
