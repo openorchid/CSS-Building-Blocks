@@ -53,12 +53,42 @@
   background-color: var(--item-active);
 }
 
-[role="tablist"] ul li > a[data-icon]::before {
+[role="tablist"] ul li > a > span[data-icon] {
+  display: inline-flex;
+  position: relative;
   margin: 0.4rem 0 0.2rem;
-  font-size: 2.4rem;
+  padding: 0.4rem 1.5rem;
+  overflow: hidden;
+  border-radius: 3rem;
+  background-color: var(--item-plus);
 }
 
-[role="tablist"] ul li > a.selected {
+[role="tablist"] ul li > a > span[data-icon]::before {
+  z-index: 1;
+  position: relative;
+  height: 2rem;
+  font-size: 2rem;
+}
+
+[role="tablist"] ul li > a > span[data-icon]::after {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  border-radius: 3rem;
   background-color: var(--accent-color);
+  content: '';
   color: var(--accent-color-plus);
+  opacity: 0;
+  transition: all 0.3s ease, transform 0.01s ease 0.3s;
+}
+
+[role="tablist"] ul li > a.selected > span[data-icon]::after {
+  visibility: visible;
+  transform: scale(1);
+  opacity: 1;
+  transition: all 0.3s ease;
 }
