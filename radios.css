@@ -30,15 +30,17 @@
   border-radius: 50%;
   outline: none;
   background-color: var(--radio-normal);
-  transition: all 0.1s ease;
+  transition: background-color 0.3s ease;
 }
 
 .pack-radio > span input[type="radio"]:hover {
   background-color: var(--radio-hover);
+  transition: none;
 }
 
 .pack-radio > span input[type="radio"]:hover {
   background-color: var(--radio-active);
+  transition: none;
 }
 
 .pack-radio > span input[type="radio"]:checked {
@@ -62,7 +64,7 @@
   content: '';
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  transition: all 0.3s cubic-bezier(0.5, 0.8, 0, 1);
 }
 
 .pack-radio.danger > span input[type="radio"]::before {
@@ -72,5 +74,5 @@
 .pack-radio > span input[type="radio"]:checked::before {
   transform: scale(1);
   opacity: 1;
-  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1.5);
+  transition: all 0.3s cubic-bezier(0.5, 0.8, 0, 1.1);
 }

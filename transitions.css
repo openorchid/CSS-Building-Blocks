@@ -20,6 +20,7 @@
 
 @keyframes from-scale {
   from {
+    transform: var(--old-transform);
     opacity: 1;
   }
   to {

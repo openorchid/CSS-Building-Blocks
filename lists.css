@@ -12,6 +12,12 @@
   text-transform: uppercase;
 }
 
+.lists.sticky header,
+.sticky .lists header {
+  position: sticky;
+  top: 0;
+}
+
 .lists ul {
   box-sizing: border-box;
   width: calc(100% - 3rem);
@@ -42,6 +48,7 @@
   justify-content: center;
 }
 
+.lists ul li:not(.noclick):focus,
 .lists ul li:not(.noclick):hover {
   background-color: var(--item-hover);
   transition: none;
@@ -52,9 +59,9 @@
   transition: none;
 }
 
-.lists ul li:not(.noclick):focus {
-  background-color: var(--item-active);
-  color: var(--accent-color);
+.lists ul li:not(.noclick).selected {
+  background-color: var(--accent-color);
+  color: var(--accent-color-plus);
 }
 
 .lists ul li[data-icon] {
@@ -78,8 +85,8 @@ html[dir="rtl"] .lists ul li[data-icon]::before {
   right: 1.2rem;
 }
 
-.lists ul li[data-icon]:focus::before {
-  color: var(--accent-color);
+.lists ul li[data-icon].selected::before {
+  color: var(--accent-color-plus);
 }
 
 .lists ul li::after {
@@ -114,8 +121,8 @@ html[dir="rtl"] .lists ul li.page::after {
   transform: scaleX(-1);
 }
 
-.lists ul li.page:focus::after {
-  color: var(--accent-color);
+.lists ul li.page.selected::after {
+  color: var(--accent-color-plus);
   opacity: 0.5;
 }
 
@@ -150,8 +157,9 @@ html[dir="rtl"] .lists ul li.page::after {
   text-overflow: ellipsis;
 }
 
-.lists ul li:focus p {
-  color: var(--accent-color);
+.lists ul li.selected a,
+.lists ul li.selected p {
+  color: var(--accent-color-plus);
 }
 
 .lists ul li p:not(:first-child) {
