@@ -48,7 +48,7 @@
 
   transform: translateX(-100%);
   border-radius: 0.6rem;
-  background-color: #0061e0;
+  background-color: var(--accent-color);
   content: '';
   transition: all 0.5s cubic-bezier(0.8, 0.1, 0.9, 0) 0.15s;
 }
