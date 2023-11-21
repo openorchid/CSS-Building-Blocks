@@ -362,6 +362,10 @@ html[dir="rtl"] [data-icon="send"]::before {
   -webkit-mask-image: url('images/camera.svg');
   mask-image: url('images/camera.svg');
 }
+[data-icon="cart"]::before {
+  -webkit-mask-image: url('images/cart.svg');
+  mask-image: url('images/cart.svg');
+}
 [data-icon="chevron-down"]::before {
   -webkit-mask-image: url('images/chevron-down.svg');
   mask-image: url('images/chevron-down.svg');
@@ -895,6 +899,14 @@ html[dir="rtl"] [data-icon="send"]::before {
 [data-icon="video"]::before {
   -webkit-mask-image: url('images/video.svg');
   mask-image: url('images/video.svg');
+}
+[data-icon="vr"]::before {
+  -webkit-mask-image: url('images/vr.svg');
+  mask-image: url('images/vr.svg');
+}
+[data-icon="web"]::before {
+  -webkit-mask-image: url('images/web.svg');
+  mask-image: url('images/web.svg');
 }
 [data-icon="webworker"]::before {
   -webkit-mask-image: url('images/webworker.svg');
