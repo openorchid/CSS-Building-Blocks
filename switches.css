@@ -29,15 +29,17 @@
   border-radius: 2.5rem;
   outline: none;
   background-color: var(--switch-normal);
-  transition: all 0.1s ease;
+  transition: background-color 0.3s ease;
 }
 
 .pack-switch > span input[type="checkbox"]:hover {
   background-color: var(--switch-hover);
+  transition: none;
 }
 
 .pack-switch > span input[type="checkbox"]:hover {
   background-color: var(--switch-active);
+  transition: none;
 }
 
 .pack-switch > span input[type="checkbox"]:checked {
@@ -55,7 +57,7 @@
   background-color: var(--text-color);
   content: '';
   pointer-events: none;
-  transition: all 0.3s cubic-bezier(0, 0.2, 0, 1);
+  transition: transform 0.3s cubic-bezier(0.5, 0.8, 0, 1), left 0.3s cubic-bezier(0.5, 0.8, 0, 1);
 }
 
 .pack-switch > span input[type="checkbox"]:hover::before {
@@ -64,7 +66,7 @@
 
 .pack-switch > span input[type="checkbox"]:active::before {
   transform: scale(1.1);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
 }
 
 .pack-switch > span input[type="checkbox"]:checked::before {
