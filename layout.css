@@ -4,7 +4,7 @@ html, body {
   padding: 0;
   accent-color: var(--accent-color);
   font-size: 10px;
-  font-family: 'Jali Arabic', system-ui;
+  font-family: -orchid-internal-font, system-ui;
 }
 
 :root {

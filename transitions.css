@@ -25,14 +25,14 @@
   }
   to {
     transform: translate(var(--pos-x), var(--pos-y)) scale(var(--scale-x), var(--scale-y));
-    opacity: 0;
+    opacity: 0.00000001;
   }
 }
 
 @keyframes to-scale {
   from {
     transform: translate(var(--pos-x), var(--pos-y)) scale(var(--scale-x), var(--scale-y));
-    opacity: 0;
+    opacity: 0.00000001;
   }
   to {
     opacity: 1;
