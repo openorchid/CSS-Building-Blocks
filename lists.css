@@ -39,7 +39,7 @@
   outline: none;
   color: var(--text-color);
   list-style: none;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .lists ul li:not(.hbox, .vbox) {
@@ -51,12 +51,12 @@
 .lists ul li:not(.noclick):focus,
 .lists ul li:not(.noclick):hover {
   background-color: var(--item-hover);
-  transition: none;
+  transition: background-color 0.1s ease;
 }
 
 .lists ul li:not(.noclick):active {
   background-color: var(--item-active);
-  transition: none;
+  transition: background-color 0.1s ease;
 }
 
 .lists ul li:not(.noclick).selected {

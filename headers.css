@@ -61,7 +61,7 @@ header[role="header"] h1 {
     scale(calc(1 + (0.25 * (1 - var(--progress, 0))) + (0.25 * var(--overscroll-progress, 0))));
   color: var(--text-color);
   font-weight: normal;
-  font-weight: calc(300 + (300 * (1 - var(--progress, 0))));
+  font-weight: calc(350 + (250 * (1 - var(--progress, 0))));
   font-size: 2rem;
   line-height: calc(5rem - (1rem * (1 - var(--progress, 0))));
   text-overflow: ellipsis;
