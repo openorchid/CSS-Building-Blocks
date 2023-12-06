@@ -1,4 +1,4 @@
-.achievement {
+.bb-achievement {
   visibility: hidden;
   position: absolute;
   top: 50%;
@@ -14,13 +14,13 @@
   transition: all 0.5s cubic-bezier(0.8, 0.1, 0.9, 0) 0.5s;
 }
 
-.achievement.visible {
+.bb-achievement.visible {
   visibility: visible;
   transform: translateX(0);
   transition: all 0.5s cubic-bezier(0.2, 0.9, 0.1, 1);
 }
 
-.achievement::before {
+.bb-achievement::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -34,12 +34,12 @@
   transition: all 0.5s cubic-bezier(0.8, 0.1, 0.9, 0) 0.375s;
 }
 
-.achievement.visible::before {
+.bb-achievement.visible::before {
   transform: translateX(0);
   transition: all 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.15s;
 }
 
-.achievement::after {
+.bb-achievement::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -53,12 +53,12 @@
   transition: all 0.5s cubic-bezier(0.8, 0.1, 0.9, 0) 0.15s;
 }
 
-.achievement.visible::after {
+.bb-achievement.visible::after {
   transform: translateX(0);
   transition: all 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.375s;
 }
 
-.achievement .content {
+.bb-achievement .content {
   box-sizing: border-box;
   display: flex;
   z-index: 1;
@@ -78,12 +78,12 @@
   transition: all 0.5s cubic-bezier(0.2, 0.9, 0.1, 1);
 }
 
-.achievement.visible .content {
+.bb-achievement.visible .content {
   transform: translateX(0);
   transition: all 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.5s;
 }
 
-.achievement .content .keyart {
+.bb-achievement .content .keyart {
   flex-shrink: 0;
   width: 5.25rem;
   height: 5.25rem;
@@ -91,7 +91,7 @@
   background-color: #858585;
 }
 
-.achievement .content .text-holder {
+.bb-achievement .content .text-holder {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -100,7 +100,7 @@
   height: 100%;
 }
 
-.achievement .content .text-holder .title {
+.bb-achievement .content .text-holder .title {
   height: 1.5rem;
   transform-origin: left;
   color: var(--text-color);
@@ -109,7 +109,7 @@
   line-height: 1.5rem;
 }
 
-.achievement.visible .content .text-holder .title {
+.bb-achievement.visible .content .text-holder .title {
   animation: achievement-title 2s ease 0.5s;
 }
 
@@ -125,7 +125,7 @@
   }
 }
 
-.achievement .content .text-holder .name {
+.bb-achievement .content .text-holder .name {
   height: 2.2rem;
 
   margin-bottom: -2.2rem;
@@ -138,14 +138,14 @@
   transition: all 0.3s ease;
 }
 
-.achievement.visible .content .text-holder .name {
+.bb-achievement.visible .content .text-holder .name {
   margin-bottom: 0;
   transform: translateY(0);
   opacity: 1;
   transition: all 0.5s ease 2s;
 }
 
-.achievement .content .text-holder .points {
+.bb-achievement .content .text-holder .points {
   height: 2rem;
 
   margin-bottom: -2rem;
@@ -160,7 +160,7 @@
   transition: all 0.3s ease;
 }
 
-.achievement.visible .content .text-holder .points {
+.bb-achievement.visible .content .text-holder .points {
   margin-bottom: 0;
   transform: translateY(0);
   opacity: 1;

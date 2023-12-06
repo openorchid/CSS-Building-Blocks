@@ -1,4 +1,4 @@
-[role="tablist"] {
+.bb-tablist {
   z-index: 5;
   position: absolute;
   bottom: 0;
@@ -9,7 +9,7 @@
   background-color: var(--background-minus);
 }
 
-[role="tablist"] ul {
+.bb-tablist ul {
   display: flex;
   width: calc(100% - 1rem);
   max-width: 75.8rem;
@@ -19,7 +19,7 @@
   gap: 0.5rem;
 }
 
-[role="tablist"] ul li {
+.bb-tablist ul li {
   flex-grow: 1;
   width: calc(100% - 1rem);
   height: 5.5rem;
@@ -27,7 +27,7 @@
   list-style: none;
 }
 
-[role="tablist"] ul li > a {
+.bb-tablist ul li > a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,15 +45,15 @@
   white-space: nowrap;
 }
 
-[role="tablist"] ul li > a:hover {
+.bb-tablist ul li > a:hover {
   background-color: var(--item-hover);
 }
 
-[role="tablist"] ul li > a:active {
+.bb-tablist ul li > a:active {
   background-color: var(--item-active);
 }
 
-[role="tablist"] ul li > a > span[data-icon] {
+.bb-tablist ul li > a > span[data-icon] {
   display: inline-flex;
   position: relative;
   margin: 0.4rem 0 0.2rem;
@@ -63,14 +63,14 @@
   background-color: var(--item-plus);
 }
 
-[role="tablist"] ul li > a > span[data-icon]::before {
+.bb-tablist ul li > a > span[data-icon]::before {
   z-index: 1;
   position: relative;
   height: 2rem;
   font-size: 2rem;
 }
 
-[role="tablist"] ul li > a > span[data-icon]::after {
+.bb-tablist ul li > a > span[data-icon]::after {
   visibility: hidden;
   position: absolute;
   top: 0;
@@ -86,7 +86,7 @@
   transition: all 0.3s ease, transform 0.01s ease 0.3s;
 }
 
-[role="tablist"] ul li > a.selected > span[data-icon]::after {
+.bb-tablist ul li > a.selected > span[data-icon]::after {
   visibility: visible;
   transform: scale(1);
   opacity: 1;

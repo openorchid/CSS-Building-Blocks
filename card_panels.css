@@ -1,4 +1,4 @@
-.card-panel {
+section[role="card"] {
   visibility: hidden;
   position: fixed;
   top: 0;
@@ -10,13 +10,13 @@
   transition: all 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.3s;
 }
 
-.card-panel.visible {
+section[role="card"].visible {
   visibility: visible;
   opacity: 1;
   transition: all 0.1s ease;
 }
 
-.card-panel > .card {
+section[role="card"] > .card {
   position: fixed;
   top: calc(4.5rem + var(--statusbar-height));
   left: 50%;
@@ -32,11 +32,11 @@
   transition: all 0.3s ease;
 }
 
-.card-panel.visible > .card {
+section[role="card"].visible > .card {
   transform: translateY(calc(100% * var(--card-progress, 0)));
 }
 
-.card-panel > .card > .handle {
+section[role="card"] > .card > .handle {
   z-index: 1;
   position: absolute;
   top: 0;
@@ -46,7 +46,7 @@
   overflow: hidden;
 }
 
-.card-panel > .card > .handle::before {
+section[role="card"] > .card > .handle::before {
   display: block;
   width: 5rem;
   height: 0.5rem;
@@ -56,7 +56,7 @@
   content: '';
 }
 
-.card-panel > .card > .content {
+section[role="card"] > .card > .content {
   position: absolute;
   top: 0;
   left: 0;
@@ -64,6 +64,6 @@
   height: 100%;
 }
 
-.card-panel > .card .panel {
+section[role="card"] > .card .panel {
   --statusbar-height: 0rem;
 }

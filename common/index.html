@@ -14,8 +14,18 @@
   <link rel="stylesheet" type="text/css" href="../checkboxes.css">
   <link rel="stylesheet" type="text/css" href="../radios.css">
   <link rel="stylesheet" type="text/css" href="../input_areas.css">
+  <link rel="stylesheet" type="text/css" href="../softkeys.css">
   <link rel="stylesheet" type="text/css" href="../chrome.css">
   <script defer type="text/javascript" src="../../js/panels.js"></script>
+  <script defer type="text/javascript" src="../../js/spatial_navigation.js"></script>
+  <script defer>
+    SpatialNavigation.init();
+    SpatialNavigation.add({
+      selector: '.tablist a, .tablist button, .tablist .lists ul li, .visible a, .visible button, .visible .lists ul li, .visible .lists ul li input'
+    });
+    SpatialNavigation.makeFocusable();
+    SpatialNavigation.focus();
+  </script>
 </head>
 <body>
   <main role="app">
@@ -85,7 +95,30 @@
               </span>
             </div>
           </li>
+          <li>
+            <div class="pack-switch danger">
+              <label for="switch2">
+                <p>Danger switch on</p>
+              </label>
+              <span>
+                <input type="checkbox" name="switch2" id="switch2">
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="pack-switch danger">
+              <label for="switch2">
+                <p>Danger switch on</p>
+              </label>
+              <span>
+                <input type="checkbox" name="switch2" id="switch2" checked>
+              </span>
+            </div>
+          </li>
         </ul>
+        <detail data-icon="bell">Recieve Notifications</detail>
+        <detail data-icon="bell-off">Do Not Disturb</detail>
+        <detail>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis dolorem, quisquam nisi reiciendis debitis sed sit iusto mollitia quae pariatur ipsam magni obcaecati, consequatur aspernatur repellendus soluta! Itaque, molestiae nam.</detail>
 
         <header>Checkboxes</header>
         <ul>
@@ -167,6 +200,12 @@
           <li class="noclick center"><p>Center</p></li>
           <li class="noclick end"><p>End</p></li>
         </ul>
+      </div>
+
+      <div class="bb-softkeys">
+        <div class="softkey">Options</div>
+        <div class="softkey">Select</div>
+        <div class="softkey">Search</div>
       </div>
     </section>
   </main>

@@ -46,6 +46,10 @@
   background-color: var(--accent-color);
 }
 
+.pack-switch.danger > span input[type="checkbox"]:checked {
+  background-color: #c00040;
+}
+
 .pack-switch > span input[type="checkbox"]::before {
   z-index: 1;
   position: absolute;
@@ -70,17 +74,17 @@
 }
 
 .pack-switch > span input[type="checkbox"]:checked::before {
+  left: calc(0.5rem + (2.5rem * var(--switch-movement-progress, 1)));
   background-color: var(--accent-color-plus);
 }
 
-@media screen and (max-width: 320px) and (max-height: 240px),
-       screen and (max-width: 240px) and (max-height: 320px) {
+.pack-switch.danger > span input[type="checkbox"]:checked::before {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+@media screen and (min-width: 240px) and (max-width: 320px) and (max-height: 320px) {
   .pack-switch > span input[type="checkbox"] {
     width: 4rem;
-  }
-
-  .pack-switch > span input[type="checkbox"]:active::before {
-    width: 3rem;
   }
 
   .pack-switch > span input[type="checkbox"]:checked::before {

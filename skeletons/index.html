@@ -15,6 +15,7 @@
   <link rel="stylesheet" type="text/css" href="../radios.css">
   <link rel="stylesheet" type="text/css" href="../input_areas.css">
   <link rel="stylesheet" type="text/css" href="../chrome.css">
+  <link rel="stylesheet" type="text/css" href="../skeletons.css">
   <script defer type="text/javascript" src="../../js/panels.js"></script>
 </head>
 <body>
@@ -23,7 +24,7 @@
       <header>
         <div class="safezone">
           <a href="#" data-icon="menu"></a>
-          <h1>App Name</h1>
+          <h1 class="pack-skeleton"></h1>
           <menu role="toolbar">
             <a href="#" data-icon="search"></a>
           </menu>
@@ -31,26 +32,26 @@
       </header>
 
       <div class="content lists">
-        <header>List Items</header>
+        <header class="pack-skeleton">List Items</header>
         <ul>
           <li>
-            <p>I'm clickable</p>
+            <p class="pack-skeleton">I'm clickable</p>
           </li>
           <li class="noclick">
-            <p>I'm not clickable</p>
+            <p class="pack-skeleton">I'm not clickable</p>
           </li>
           <li>
-            <p>I'm clickable too</p>
-            <p>And also with a description</p>
+            <p class="pack-skeleton">I'm clickable too</p>
+            <p class="pack-skeleton">And also with a description</p>
           </li>
           <li>
-            <p>I'm also clickable</p>
-            <p>And also with a description</p>
-            <p>And a another</p>
+            <p class="pack-skeleton">I'm also clickable</p>
+            <p class="pack-skeleton">And also with a description</p>
+            <p class="pack-skeleton">And a another</p>
           </li>
         </ul>
 
-        <header>Buttons</header>
+        <header class="pack-skeleton">Buttons</header>
         <ul>
           <li>
             <button>Default</button>
@@ -63,12 +64,12 @@
           </li>
         </ul>
 
-        <header>Switches</header>
+        <header class="pack-skeleton">Switches</header>
         <ul>
           <li>
             <div class="pack-switch">
               <label for="switch1">
-                <p>Switch off</p>
+                <p class="pack-skeleton">Switch off</p>
               </label>
               <span>
                 <input type="checkbox" name="switch1" id="switch1">
@@ -78,7 +79,27 @@
           <li>
             <div class="pack-switch">
               <label for="switch2">
-                <p>Switch on</p>
+                <p class="pack-skeleton">Switch on</p>
+              </label>
+              <span>
+                <input type="checkbox" name="switch2" id="switch2" checked>
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="pack-switch danger">
+              <label for="switch2">
+                <p class="pack-skeleton">Danger switch on</p>
+              </label>
+              <span>
+                <input type="checkbox" name="switch2" id="switch2">
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="pack-switch danger">
+              <label for="switch2">
+                <p class="pack-skeleton">Danger switch on</p>
               </label>
               <span>
                 <input type="checkbox" name="switch2" id="switch2" checked>
@@ -86,13 +107,16 @@
             </div>
           </li>
         </ul>
+        <detail class="pack-skeleton" data-icon="bell">Recieve Notifications</detail>
+        <detail class="pack-skeleton" data-icon="bell-off">Do Not Disturb</detail>
+        <detail class="pack-skeleton">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis dolorem, quisquam nisi reiciendis debitis sed sit iusto mollitia quae pariatur ipsam magni obcaecati, consequatur aspernatur repellendus soluta! Itaque, molestiae nam.</detail>
 
-        <header>Checkboxes</header>
+        <header class="pack-skeleton">Checkboxes</header>
         <ul>
           <li>
             <div class="pack-checkbox">
               <label for="checkbox1">
-                <p>Checkbox off</p>
+                <p class="pack-skeleton">Checkbox off</p>
               </label>
               <span>
                 <input type="checkbox" name="checkbox1" id="checkbox1">
@@ -102,7 +126,7 @@
           <li>
             <div class="pack-checkbox">
               <label for="checkbox2">
-                <p>Checkbox on</p>
+                <p class="pack-skeleton">Checkbox on</p>
               </label>
               <span>
                 <input type="checkbox" name="checkbox2" id="checkbox2" checked>
@@ -112,7 +136,7 @@
           <li>
             <div class="pack-checkbox danger">
               <label for="checkbox3">
-                <p>Danger checkbox on</p>
+                <p class="pack-skeleton">Danger checkbox on</p>
               </label>
               <span>
                 <input type="checkbox" name="checkbox3" id="checkbox3" checked>
@@ -121,12 +145,12 @@
           </li>
         </ul>
 
-        <header>Radios</header>
+        <header class="pack-skeleton">Radios</header>
         <ul>
           <li>
             <div class="pack-radio">
               <label for="radio1">
-                <p>Radio off</p>
+                <p class="pack-skeleton">Radio off</p>
               </label>
               <span>
                 <input type="radio" name="radio" id="radio1">
@@ -136,7 +160,7 @@
           <li>
             <div class="pack-radio">
               <label for="radio2">
-                <p>Radio on</p>
+                <p class="pack-skeleton">Radio on</p>
               </label>
               <span>
                 <input type="radio" name="radio" id="radio2" checked>
@@ -146,7 +170,7 @@
           <li>
             <div class="pack-radio danger">
               <label for="radio3">
-                <p>Danger radio</p>
+                <p class="pack-skeleton">Danger radio</p>
               </label>
               <span>
                 <input type="radio" name="radio" id="radio3">
@@ -155,17 +179,17 @@
           </li>
         </ul>
 
-        <header>Flex HBox</header>
+        <header class="pack-skeleton">Flex HBox</header>
         <ul class="hbox">
-          <li class="noclick start"><p>Start</p></li>
-          <li class="noclick center"><p>Center</p></li>
-          <li class="noclick end"><p>End</p></li>
+          <li class="noclick start"><p class="pack-skeleton">Start</p></li>
+          <li class="noclick center"><p class="pack-skeleton">Center</p></li>
+          <li class="noclick end"><p class="pack-skeleton">End</p></li>
         </ul>
-        <header>Flex VBox</header>
+        <header class="pack-skeleton">Flex VBox</header>
         <ul class="vbox">
-          <li class="noclick start"><p>Start</p></li>
-          <li class="noclick center"><p>Center</p></li>
-          <li class="noclick end"><p>End</p></li>
+          <li class="noclick start"><p class="pack-skeleton">Start</p></li>
+          <li class="noclick center"><p class="pack-skeleton">Center</p></li>
+          <li class="noclick end"><p class="pack-skeleton">End</p></li>
         </ul>
       </div>
     </section>
