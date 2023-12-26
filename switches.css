@@ -34,12 +34,12 @@
 
 .pack-switch > span input[type="checkbox"]:hover {
   background-color: var(--switch-hover);
-  transition: none;
+  transition: background-color 0.3s ease;
 }
 
 .pack-switch > span input[type="checkbox"]:hover {
   background-color: var(--switch-active);
-  transition: none;
+  transition: background-color 0.3s ease;
 }
 
 .pack-switch > span input[type="checkbox"]:checked {

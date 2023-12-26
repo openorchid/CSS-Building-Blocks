@@ -468,6 +468,11 @@ html[dir="rtl"] [data-icon="send"]::before {
   -webkit-mask-image: url('images/email.svg');
   mask-image: url('images/email.svg');
 }
+[data-icon="emoji"]::before,
+[data-icon="emojis"]::before {
+  -webkit-mask-image: url('images/emoji.svg');
+  mask-image: url('images/emoji.svg');
+}
 [data-icon="exitfullscreen"]::before {
   -webkit-mask-image: url('images/exitfullscreen.svg');
   mask-image: url('images/exitfullscreen.svg');
@@ -688,6 +693,10 @@ html[dir="rtl"] [data-icon="send"]::before {
   -webkit-mask-image: url('images/remove.svg');
   mask-image: url('images/remove.svg');
 }
+[data-icon="reply"]::before {
+  -webkit-mask-image: url('images/reply.svg');
+  mask-image: url('images/reply.svg');
+}
 [data-icon="report"]::before {
   -webkit-mask-image: url('images/report.svg');
   mask-image: url('images/report.svg');
@@ -772,6 +781,10 @@ html[dir="rtl"] [data-icon="send"]::before {
   -webkit-mask-image: url('images/signal-error.svg');
   mask-image: url('images/signal-error.svg');
 }
+[data-icon="signal-searching"]::before {
+  -webkit-mask-image: url('images/signal-searching.svg');
+  mask-image: url('images/signal-searching.svg');
+}
 [data-icon="signal"]::before {
   -webkit-mask-image: url('images/signal.svg');
   mask-image: url('images/signal.svg');
@@ -828,6 +841,11 @@ html[dir="rtl"] [data-icon="send"]::before {
   -webkit-mask-image: url('images/split.svg');
   mask-image: url('images/split.svg');
 }
+[data-icon="sticker"]::before,
+[data-icon="stickers"]::before {
+  -webkit-mask-image: url('images/sticker.svg');
+  mask-image: url('images/sticker.svg');
+}
 [data-icon="stopwatch"]::before {
   -webkit-mask-image: url('images/stopwatch.svg');
   mask-image: url('images/stopwatch.svg');
@@ -867,6 +885,10 @@ html[dir="rtl"] [data-icon="send"]::before {
 [data-icon="trending"]::before {
   -webkit-mask-image: url('images/trending.svg');
   mask-image: url('images/trending.svg');
+}
+[data-icon="tv"]::before {
+  -webkit-mask-image: url('images/tv.svg');
+  mask-image: url('images/tv.svg');
 }
 [data-icon="unlock"]::before {
   -webkit-mask-image: url('images/unlock.svg');
@@ -983,6 +1005,10 @@ html[dir="rtl"] [data-icon="send"]::before {
 [data-icon="world-clock"]::before {
   -webkit-mask-image: url('images/world-clock.svg');
   mask-image: url('images/world-clock.svg');
+}
+[data-icon="xbox"]::before {
+  -webkit-mask-image: url('images/xbox.svg');
+  mask-image: url('images/xbox.svg');
 }
 
 .enabled [data-icon="wifi"]::before {

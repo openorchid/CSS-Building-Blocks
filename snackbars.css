@@ -1,4 +1,4 @@
-[role="snackbar"] {
+.bb-snackbar {
   box-sizing: border-box;
   position: absolute;
   bottom: calc(var(--software-buttons-height, 0) + 5rem);
@@ -10,17 +10,17 @@
   border-radius: 2rem;
   backdrop-filter: blur(20px) saturate(180%);
   background-color: var(--acrylic-background-plus);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.2);
   line-height: 2.2rem;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-[role="snackbar"].hidden {
+.bb-snackbar.hidden {
   transform: scale(0.9);
   opacity: 0;
 }
 
-[role="snackbar"] .label {
+.bb-snackbar .label {
   color: var(--text-color);
   font-weight: normal;
   font-size: 1.6rem;

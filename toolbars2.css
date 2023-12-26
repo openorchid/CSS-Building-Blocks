@@ -52,19 +52,18 @@
   line-height: 3.6rem;
   text-align: center;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 [role="toolbar2"] a:hover {
   background-color: var(--item-hover-plus);
-  transition: transform 0.3s ease;
+  transition: background-color 0.1s ease;
 }
 
 [role="toolbar2"] a:active {
-  transform: scale(0.9);
   background-color: var(--item-active-plus);
   color: var(--text-color-faded);
-  transition: none;
+  transition: background-color 0.1s ease;
 }
 
 [role="toolbar2"] a[data-icon]::before {

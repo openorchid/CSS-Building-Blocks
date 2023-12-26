@@ -13,6 +13,16 @@ html, body {
   --safezone-width: 75rem;
 }
 
+p {
+  color: var(--text-color);
+  font-size: 1.6rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 [role="app"] {
   position: fixed;
   top: 0;
@@ -34,7 +44,7 @@ section[role="panel"] {
   overflow: hidden;
   background-color: var(--background);
   opacity: 0;
-  transition: all 1s cubic-bezier(0.2, 0.9, 0.1, 1), opacity 0.3s cubic-bezier(0.2, 0.9, 0.1, 1);
+  transition: transform 1s cubic-bezier(0.2, 0.9, 0.1, 1), opacity 0.3s cubic-bezier(0.2, 0.9, 0.1, 1), visibility 1s ease;
 }
 
 html[dir="ltr"] section[role="panel"].previous {
@@ -56,16 +66,17 @@ html[dir="rtl"] section[role="panel"].visible {
   visibility: visible;
   transform: translateX(0);
   opacity: 1;
-  transition: all 1s cubic-bezier(0.2, 0.9, 0.1, 1), opacity 0.7s cubic-bezier(0.2, 0.9, 0.1, 1) 0.3s;
+  transition: transform 1s cubic-bezier(0.2, 0.9, 0.1, 1), opacity 0.7s cubic-bezier(0.2, 0.9, 0.1, 1) 0.3s, visibility 1s ease;
 }
 
 html[dir="ltr"] section[role="panel"].will-be-visible,
 html[dir="rtl"] section[role="panel"].will-be-visible {
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 
 section[role="panel"] > .content {
   box-sizing: border-box;
+  position: relative;
   flex-grow: 1;
   width: 100%;
   height: 100%;
@@ -79,28 +90,33 @@ section[role="panel"] > .content > .scroll-content {
   min-height: 100%;
 }
 
-section[role="panel"] > .content > *:not(.scroll-content, .scrollbar-track),
-section[role="panel"] > .content > .scroll-content > * {
+section[role="panel"] > .content > *:not(.scroll-content, .scrollbar-track, .bb-emptyscreen),
+section[role="panel"] > .content > .scroll-content > *:not(.bb-emptyscreen) {
   visibility: hidden;
   transform: translateY(3rem);
   opacity: 0;
   transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.5s, opacity 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.5s, visibility 0.5s ease 0.5s;
 }
 
-section[role="panel"].visible > .content > *:not(.scroll-content, .scrollbar-track),
-section[role="panel"].will-be-visible > .content > *:not(.scroll-content, .scrollbar-track),
-section[role="panel"].visible > .content > .scroll-content > *,
-section[role="panel"].will-be-visible > .content > .scroll-content > * {
+section[role="panel"].visible > .content > *:not(.scroll-content, .scrollbar-track, .bb-emptyscreen),
+section[role="panel"].will-be-visible > .content > *:not(.scroll-content, .scrollbar-track, .bb-emptyscreen),
+section[role="panel"].visible > .content > .scroll-content > *:not(.bb-emptyscreen),
+section[role="panel"].will-be-visible > .content > .scroll-content > *:not(.bb-emptyscreen) {
   visibility: visible;
   transform: translateY(0);
   opacity: 1;
   transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.5s, opacity 0.5s cubic-bezier(0.2, 0.9, 0.1, 1) 0.5s, visibility 0.5s ease 0.5s;
 }
 
-section[role="panel"] > .content .bb-search {
+section[role="panel"] > .content .searchbox {
   width: calc(100% - 3rem);
   max-width: calc(var(--safezone-width) - 3rem);
   margin: 0 auto 1rem;
+  overflow: hidden;
+}
+
+section[role="panel"] > .content .searchbox > .bb-search {
+  width: 100%;
 }
 
 section[role="panel"] > .content aside {
@@ -169,10 +185,10 @@ section[role="panel"] > .content .scrollbar-track-x {
 }
 
 section[role="panel"] > .content .scrollbar-track-y {
-  top: calc(0.5rem + (5rem * var(--progress)));
+  top: calc(0.5rem + (5rem * var(--progress, 0)));
   right: 0;
   width: 0.5rem;
-  height: calc(100% - 1rem - var(--software-buttons-height) - (5rem * var(--progress)));
+  height: calc(100% - 1rem - var(--software-buttons-height) - (5rem * var(--progress, 0)));
 }
 html[dir="rtl"] section[role="panel"] > .content .scrollbar-track-y {
   right: unset;
@@ -180,8 +196,8 @@ html[dir="rtl"] section[role="panel"] > .content .scrollbar-track-y {
 }
 
 section[role="panel"] > .headerbar:not(.compact) + .content .scrollbar-track-y {
-  top: calc(0.5rem + (5rem * var(--progress)) + (13rem * var(--overscroll-progress)));
-  height: calc(100% - 1rem - var(--software-buttons-height) - (5rem * var(--progress)) + (13rem * var(--overscroll-progress)));
+  top: calc(0.5rem + (5rem * var(--progress, 0)) + (13rem * var(--overscroll-progress)));
+  height: calc(100% - 1rem - var(--software-buttons-height) - (5rem * var(--progress, 0)) + (13rem * var(--overscroll-progress)));
 }
 
 section[role="panel"] > .content .scrollbar-thumb {
@@ -196,11 +212,13 @@ section[role="panel"] > .content .scrollbar-thumb {
 .hbox {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .vbox {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .start {

@@ -56,11 +56,20 @@ input[type="timedate"]:focus {
 
 /* Search box */
 .bb-search {
+  box-sizing: border-box;
   display: flex;
+  position: relative;
   width: 100%;
   height: 4rem;
+  padding-inline-start: 5.5rem;
   border-radius: 2rem;
   background-color: var(--item-plus);
+  transition: padding 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.bb-search:focus-within {
+  padding-inline-start: 0;
+  padding-inline-end: 5.5rem;
 }
 
 .bb-search input[type="text"],
@@ -77,18 +86,32 @@ input[type="timedate"]:focus {
   padding: 0;
   background-color: transparent;
   box-shadow: none;
+  transition: padding 0.5s cubic-bezier(1, 0, 0, 1);
 }
 
-.bb-search input[type="text"]:first-child,
-.bb-search input[type="number"]:first-child,
-.bb-search input[type="username"]:first-child,
-.bb-search input[type="email"]:first-child,
-.bb-search input[type="password"]:first-child,
-.bb-search input[type="search"]:first-child,
-.bb-search input[type="url"]:first-child,
-.bb-search input[type="time"]:first-child,
-.bb-search input[type="date"]:first-child,
-.bb-search input[type="timedate"]:first-child {
+.bb-search input[type="text"]::placeholder,
+.bb-search input[type="number"]::placeholder,
+.bb-search input[type="username"]::placeholder,
+.bb-search input[type="email"]::placeholder,
+.bb-search input[type="password"]::placeholder,
+.bb-search input[type="search"]::placeholder,
+.bb-search input[type="url"]::placeholder,
+.bb-search input[type="time"]::placeholder,
+.bb-search input[type="date"]::placeholder,
+.bb-search input[type="timedate"]::placeholder {
+  color: var(--text-color-faded);
+}
+
+.bb-search:focus-within input[type="text"]:first-child,
+.bb-search:focus-within input[type="number"]:first-child,
+.bb-search:focus-within input[type="username"]:first-child,
+.bb-search:focus-within input[type="email"]:first-child,
+.bb-search:focus-within input[type="password"]:first-child,
+.bb-search:focus-within input[type="search"]:first-child,
+.bb-search:focus-within input[type="url"]:first-child,
+.bb-search:focus-within input[type="time"]:first-child,
+.bb-search:focus-within input[type="date"]:first-child,
+.bb-search:focus-within input[type="timedate"]:first-child {
   padding-inline-start: 1.5rem;
 }
 
@@ -104,15 +127,49 @@ input[type="timedate"]:focus {
   line-height: 4rem;
 }
 
+.bb-search button[type="reset"] {
+  visibility: hidden;
+  margin: 0 -2rem;
+  opacity: 0;
+  transition: margin 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.bb-search:focus-within button[type="reset"] {
+  visibility: visible;
+  margin: 0;
+  opacity: 1;
+  transition: margin 0.1s ease, opacity 0.1s ease, visibility 0.1s ease;
+}
+
 .bb-search button[type="submit"] {
+  position: absolute;
+  top: 0;
   width: 5rem;
   height: 3rem;
   margin: 0.5rem;
   margin-inline-start: 0;
   padding: 0 1.5rem;
+  background-color: transparent;
+  color: var(--text-color-faded);
+  line-height: 3rem;
+  transition: left 0.5s cubic-bezier(1, 0, 0, 1), right 0.5s cubic-bezier(1, 0, 0, 1), background-color 0.5s cubic-bezier(1, 0, 0, 1), color 0.5s cubic-bezier(1, 0, 0, 1);
+}
+html[dir="ltr"] .bb-search button[type="submit"] {
+  left: 0.5rem;
+}
+html[dir="rtl"] .bb-search button[type="submit"] {
+  right: 0.5rem;
+}
+
+.bb-search:focus-within button[type="submit"] {
   background-color: var(--accent-color);
   color: var(--accent-color-plus);
-  line-height: 3rem;
+}
+html[dir="ltr"] .bb-search:focus-within button[type="submit"] {
+  left: calc(100% - 5rem - 0.5rem);
+}
+html[dir="rtl"] .bb-search:focus-within button[type="submit"] {
+  right: calc(100% - 5rem - 0.5rem);
 }
 
 .bb-search button[data-icon]::before {
@@ -168,6 +225,19 @@ input[type="timedate"]:focus {
 .bb-messagebox input[type="date"]:first-child,
 .bb-messagebox input[type="timedate"]:first-child {
   padding-inline-start: 1.5rem;
+}
+
+.bb-messagebox input[type="text"]::placeholder,
+.bb-messagebox input[type="number"]::placeholder,
+.bb-messagebox input[type="username"]::placeholder,
+.bb-messagebox input[type="email"]::placeholder,
+.bb-messagebox input[type="password"]::placeholder,
+.bb-messagebox input[type="search"]::placeholder,
+.bb-messagebox input[type="url"]::placeholder,
+.bb-messagebox input[type="time"]::placeholder,
+.bb-messagebox input[type="date"]::placeholder,
+.bb-messagebox input[type="timedate"]::placeholder {
+  color: var(--text-color-faded);
 }
 
 .bb-messagebox button {

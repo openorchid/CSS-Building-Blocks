@@ -37,13 +37,11 @@
 @keyframes slideUpFrom {
   0% {
     transform: scale(0.75) translateY(3rem);
-    filter: blur(20px);
     opacity: 0;
   }
 
   100% {
     transform: translateY(0);
-    filter: blur(0px);
     opacity: 1;
   }
 }
@@ -51,13 +49,11 @@
 @keyframes slideUpTo {
   0% {
     transform: translateY(0);
-    filter: blur(0px);
     opacity: 1;
   }
 
   100% {
     transform: scale(0.75) translateY(-3rem);
-    filter: blur(20px);
     opacity: 0;
   }
 }
@@ -65,13 +61,11 @@
 @keyframes slideDownFrom {
   0% {
     transform: scale(0.75) translateY(-3rem);
-    filter: blur(20px);
     opacity: 0;
   }
 
   100% {
     transform: translateY(0);
-    filter: blur(0px);
     opacity: 1;
   }
 }
@@ -79,13 +73,11 @@
 @keyframes slideDownTo {
   0% {
     transform: translateY(0);
-    filter: blur(0px);
     opacity: 1;
   }
 
   100% {
     transform: scale(0.75) translateY(3rem);
-    filter: blur(20px);
     opacity: 0;
   }
 }
